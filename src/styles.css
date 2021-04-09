@@ -1,0 +1,107 @@
+h1 {
+  color: #fff;
+  font-size: 45px;
+  position: fixed;
+  left: 45%;
+  top: 13%;
+}
+
+h2 {
+  color: #fff;
+  font-size: 45px;
+  position: fixed;
+  right: 48%;
+  top: 20%;
+}
+
+h3 {
+  color: #fff;
+  font-size: 16px;
+  position: fixed;
+  left: 45%;
+  top: 8%;
+}
+
+h4 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 80px;
+}
+
+h5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+ul {
+  margin-top: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+footer {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.card {
+  border-radius: 15px;
+  text-align: center;
+}
+
+.card-img {
+  display: block;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100px;
+}
+
+.col-2 {
+  width: 12%;
+}
+
+.col-4 {
+  width: 280px;
+}
+
+.extra-info {
+  color: #546e7a;
+  position: fixed;
+  right: 48%;
+  top: 28%;
+}
+
+.main-image {
+  border-radius: 30px;
+  position: fixed;
+  right: 30%;
+  top: 5%;
+  width: 180px;
+}
+
+.container {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  border-radius: 30px;
+  margin: 40px;
+  max-width: 1322px;
+  padding: 50px 30px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  position: fixed;
+}
+
+.unit {
+  color: #fff;
+  font-size: 25px;
+  position: fixed;
+  right: 44%;
+  top: 20%;
+}
+
+#current-location-button {
+  margin-left: -220px;
+}
