@@ -108,6 +108,16 @@ small {
   top: 20%;
 }
 
+.unit .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.unit .active:hover {
+  text-decoration: none;
+}
+
 #current-location-button {
   margin-left: -220px;
 }

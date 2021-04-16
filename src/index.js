@@ -65,7 +65,26 @@ document.querySelector("#icon").setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+celsiusTemperature = response.data.main.temp;
 }
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+   let temperatureElement = document.querySelector("#temperature");
+   celsiusLink.classList.remove("active");
+   fahrenheitLink.classList.add("active");
+   let fahrenheitTemperature = (celsiusTemperature * 9)/ 5 + 32;
+   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+ 
+function showCelsius(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 
 
 
@@ -84,6 +103,17 @@ enterCityForm.addEventListener("click", handleSubmit);
 //Get current location
 let getLocation = document.querySelector("#current-location-button");
 getLocation.addEventListener("click", userLocation);
+
+let celsiusTemperature = null;
+
+
+//Celsius to Fahrenheit
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click",convertToFahrenheit);
+ 
+//Fahrenheit to celsius
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click",showCelsius);
 
 //On load show data of this city be default
 searchCity("Sydney");

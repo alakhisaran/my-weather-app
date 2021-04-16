@@ -23,9 +23,10 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Enter location"
+                placeholder="Enter a city name"
                 autofocus="on"
                 id="city-input"
+                autocomplete="off"
               />
             </div>
           </div>
@@ -43,7 +44,10 @@
       </form>
       <h1 id="city"></h1>
       <h2 class="temperature" id="temperature"></h2>
-      <div class="unit">°C</div>
+      <div class="unit">
+        <a href="#" id="celsius-link" class="active">°C</a> |
+        <a href="#" id="fahrenheit-link">°F</a>
+      </div>
       <img id="icon" class="main-image" src="" />
       <h3>
         Last updated: <span id="date"></span>
