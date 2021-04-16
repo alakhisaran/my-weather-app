@@ -1,6 +1,14 @@
-function formatDate(currentTime) {
+function formatDate(timeStamp) {
+let date = new Date(timeStamp);
+let hours = date.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;}
 
-  let days = [
+let minutes = date.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;}
+
+let days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -10,17 +18,9 @@ function formatDate(currentTime) {
   "Saturday"
 ];
 
-let day = days[now.getDay()];
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;}
-
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;}
+let day = days[date.getDay()];
 
 return `${day} ${hours}:${minutes}`;
-
 }
 
 function searchCity(city) {
@@ -54,7 +54,7 @@ function currentLocation(position){
 }
 
 function showTemperature(response) {
-console.log(response.data);
+//console.log(response.data);
 document.querySelector("#city").innerHTML = response.data.name;
 document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
 document.querySelector("#feelingTemp").innerHTML = Math.round(response.data.main.feels_like);
