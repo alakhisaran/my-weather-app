@@ -68,6 +68,7 @@ document.querySelector("#icon").setAttribute(
 celsiusTemperature = response.data.main.temp;
 }
 
+
 function convertToFahrenheit(event) {
   event.preventDefault();
    let temperatureElement = document.querySelector("#temperature");
@@ -85,8 +86,37 @@ function showCelsius(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+function displayForecast() {
 
+  let forecastElement = document.querySelector("#forecast");
 
+  let days = ["Thu", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+
+  forecastHTML = forecastHTML +
+  `
+          <div class="col-2">
+            <div class="card h-100" style="width: 8rem">
+              <p class="card-text">${day}</p>
+              <img
+                class="card-img"
+                src="images/rainycloud.png"
+                alt="Rainy cloud"
+              />
+              <div class="card-body">
+                <p class="card-text">7°/11°</p>
+              </div>
+            </div>
+          </div>
+  `;
+});
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+//console.log(forecastHTML);
+}
 
 //Show current day of the week and current time
 let h3 = document.querySelector("h3");
@@ -117,3 +147,5 @@ celsiusLink.addEventListener("click",showCelsius);
 
 //On load show data of this city be default
 searchCity("Sydney");
+
+displayForecast();
