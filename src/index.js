@@ -158,16 +158,7 @@ enterCityForm.addEventListener("click", handleSubmit);
 let getLocation = document.querySelector("#current-location-button");
 getLocation.addEventListener("click", userLocation);
 
-let celsiusTemperature = null;
 
-
-//Celsius to Fahrenheit
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click",convertToFahrenheit);
- 
-//Fahrenheit to celsius
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click",showCelsius);
 
 //On load show data of this city be default
 searchCity("Rotterdam");

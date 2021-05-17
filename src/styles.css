@@ -114,10 +114,6 @@ small {
   text-decoration: none;
 }
 
-.unit .active:hover {
-  text-decoration: none;
-}
-
 #current-location-button {
   margin-left: -220px;
 }
