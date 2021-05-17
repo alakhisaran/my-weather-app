@@ -23,6 +23,14 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+let date = new Date(timestamp * 1000);
+let day = date.getDay()
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+return days[day];
+}
+
 function searchCity(city) {
 let apiKey = "d688e0aec682fb0302505306304b61bc";
 let units = "metric";
@@ -98,30 +106,35 @@ function showCelsius(event) {
 }
 
 function displayForecast(response) {
-console.log(response.data.daily);
+  console.log(response.data.daily);
+  let forecast =  response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat"];
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
 
   forecastHTML = forecastHTML +
   `
           <div class="col-2">
             <div class="card h-100" style="width: 8rem">
-              <p class="card-text">${day}</p>
+              <p class="card-text">${formatDay(forecastDay.dt)}</p>
+          ${index}
               <img
                 class="card-img"
-                src="images/rainycloud.png"
-                alt="Rainy cloud"
+                src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+                alt=""
               />
               <div class="card-body">
-                <p class="card-text">7°/11°</p>
+                <p class="card-text">${Math.round(forecastDay.temp.min)}°/${Math.round(forecastDay.temp.max)}°</p>
               </div>
             </div>
           </div>
   `;
+        }
 });
 
 forecastHTML = forecastHTML + `</div>`;
@@ -157,4 +170,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click",showCelsius);
 
 //On load show data of this city be default
-searchCity("Sydney");
+searchCity("Rotterdam");
