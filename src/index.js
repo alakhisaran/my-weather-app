@@ -62,15 +62,13 @@ function currentLocation(position){
 }
 
 function getForecast(coordinates) {
-console.log(coordinates);
 let apiKey = "d688e0aec682fb0302505306304b61bc";
 let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
+
 axios.get(apiUrl).then(displayForecast)
 }
 
 function showTemperature(response) {
-//console.log(response.data);
 document.querySelector("#city").innerHTML = response.data.name;
 document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
 document.querySelector("#feelingTemp").innerHTML = Math.round(response.data.main.feels_like);
@@ -106,7 +104,6 @@ function showCelsius(event) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast =  response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -139,15 +136,12 @@ function displayForecast(response) {
 
 forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
-//console.log(forecastHTML);
 }
 
 //Show current day of the week and current time
 let h3 = document.querySelector("h3");
 let now = new Date();
 h3.innerHTML = formatDate(now);
-
-//console.log(hours,minutes);
 
 //Show city input in H1
 let enterCityForm = document.querySelector("#enter-city");
@@ -157,8 +151,6 @@ enterCityForm.addEventListener("click", handleSubmit);
 //Get current location
 let getLocation = document.querySelector("#current-location-button");
 getLocation.addEventListener("click", userLocation);
-
-
 
 //On load show data of this city be default
 searchCity("Rotterdam");
