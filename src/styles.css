@@ -10,7 +10,7 @@ h2 {
   color: #fff;
   font-size: 45px;
   position: fixed;
-  right: 48%;
+  left: 45%;
   top: 20%;
 }
 
@@ -44,7 +44,7 @@ li {
 
 small {
   position: absolute;
-  bottom: 330px;
+  bottom: 440px;
   padding: 0 40px;
 }
 
@@ -72,16 +72,16 @@ small {
 .extra-info {
   color: #546e7a;
   position: fixed;
-  right: 48%;
+  left: 44%;
   top: 28%;
 }
 
 .main-image {
   border-radius: 30px;
   position: fixed;
-  right: 30%;
-  top: 5%;
-  width: 180px;
+  left: 50%;
+  top: 18%;
+  width: 100px;
 }
 
 .container {
@@ -91,7 +91,7 @@ small {
   max-width: 1322px;
   padding: 50px 30px;
   margin-bottom: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 20px;
   position: fixed;
 }
 
@@ -99,7 +99,7 @@ small {
   color: #fff;
   font-size: 25px;
   position: fixed;
-  right: 44%;
+  right: 51%;
   top: 20%;
 }
 
@@ -111,4 +111,8 @@ small {
 
 #current-location-button {
   margin-left: -220px;
+}
+
+#celsius-link {
+  color: #fff;
 }

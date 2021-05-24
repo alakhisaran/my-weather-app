@@ -120,7 +120,7 @@ function displayForecast(response) {
           <div class="col-2">
             <div class="card h-100" style="width: 8rem">
               <p class="card-text">${formatDay(forecastDay.dt)}</p>
-          ${index}
+          
               <img
                 class="card-img"
                 src="http://openweathermap.org/img/wn/${
